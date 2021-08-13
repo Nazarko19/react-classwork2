@@ -1,23 +1,28 @@
 import axios from 'axios';
 
-let config ={
-
-    baseURL:'https://jsonplaceholder.typicode.com/users'
-
-}
-
-let useraxios = axios.create(config)
+let url = axios.create(
+    {
+        baseURL: 'https://jsonplaceholder.typicode.com/'
+    }
+)
 
 const getuseraxios =() =>{
-    return useraxios.get('')
+    return url.get('users/')
 }
 
-export {getuseraxios}
+
+let getpostofusers = (id)=> {
+    return url('users/'+ id + '/posts')
+
+}
+
+let getcommentuser = (id)=>{
+    return url('posts/' +  id + '/comments')
+}
 
 
 
 
-
-
+export {getuseraxios,getpostofusers,getcommentuser}
 
 

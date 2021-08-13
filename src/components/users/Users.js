@@ -9,12 +9,12 @@ export default function Users() {
   useEffect(()=>{
     getuseraxios().then(({data}) => setUsers([...data]));
 
-  },[])
+  },)
 
   return (
     <div>
       {
-        users.map((itemUsers) => <User key={itemUsers.id}  itemUser={itemUsers}/>)
+        users.map((itemUsers) => <User key={itemUsers.id}  itemUsers={itemUsers}/>)
         }
 
     </div>
